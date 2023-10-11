@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>Gasto de Combustível</title>
+</head>
+
+<body>
+    
+  <h1>Gasto de Combustível</h1>
+  <label for="tempo">Tempo de viagem (horas):</label>
+    <input type="text" id="tempo">
+    <br>
+    <label for="km">Km/h:</label>
+    <input type="text" id="km">
+  <br><br>
+  <button onclick="calcular()" id="calcular">Calcular</button>
+
+  <p>Quantidade de litros gastos: <span id="resultado"></span> litros</p>
+
+<script>
+    function calcular() {
+        var tempo = parseFloat(document.getElementById('tempo').value);
+        var km = parseFloat(document.getElementById('km').value);
+        var consumoPorKm = 12;
+            
+        var distancia = tempo * km;
+        var litros = distancia / consumoPorKm;
+            
+        document.getElementById('resultado').textContent = litros.toFixed(3);
+    }
+</script>
+
+</body>
+
+</html>
